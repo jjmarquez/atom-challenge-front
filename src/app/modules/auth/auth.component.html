@@ -29,6 +29,9 @@
               Login
             </button>
           </div>
+          <div *ngIf="isLoading" class="flex justify-center mt-2">
+            <mat-spinner diameter="30"></mat-spinner>
+          </div>
         </form>
       </mat-card-content>
     </div>

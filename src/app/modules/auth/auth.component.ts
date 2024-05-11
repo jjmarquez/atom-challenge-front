@@ -15,6 +15,7 @@ export class AuthComponent {
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
   });
+  isLoading = false;
 
   constructor(
     private fb: FormBuilder,
@@ -27,12 +28,15 @@ export class AuthComponent {
   onSubmit(): void {
     const email = this.loginForm.value.email;
     if (this.loginForm.valid && email) {
+      this.isLoading = true;
       this.authService
         .login(email)
         .then((response) => {
+          this.isLoading = false;
           this.router.navigate(['/client/dashboard']);
         })
         .catch((error) => {
+          this.isLoading = false;
           console.error(error);
           if (
             error.status === 404 &&
@@ -45,15 +49,18 @@ export class AuthComponent {
   }
 
   registerUser(email: string): void {
+    this.isLoading = true;
     this.authService
       .registerUser(email)
       .then((response) => {
+        this.isLoading = false;
         this._snackBar.open('User registered successfully', 'Close', {
           duration: 3000,
         });
         this.router.navigate(['/client/dashboard']);
       })
       .catch((error) => {
+        this.isLoading = false;
         console.error(error);
       });
   }

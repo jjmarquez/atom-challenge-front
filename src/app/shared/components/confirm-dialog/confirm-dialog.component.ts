@@ -9,13 +9,11 @@ import {
 } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { Task } from '../../../modules/dashboard/models/task';
-
 export interface DialogData {
   task: Task;
   title: string;
   description: string;
 }
-
 @Component({
   selector: 'app-confirm-dialog',
   standalone: true,
