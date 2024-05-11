@@ -1,0 +1,38 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="
+    form.valid &&
+      click &&
+      dialogRef.close({ email: form.value.email, confirm: true })
+  "
+>
+  <h1 mat-dialog-title>New User</h1>
+  <h3 class="mb-2">Wanna register this user?</h3>
+  <div mat-dialog-content class="p-4">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        formControlName="email"
+        type="text"
+        placeholder="Enter email here"
+        required
+      />
+      <mat-error *ngIf="form?.get('email')?.errors?.['required']">
+        Email is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="flex justify-end">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button
+      mat-button
+      type="submit"
+      [disabled]="form.invalid"
+      matTooltip="Click to register new user"
+      (click)="click = true"
+    >
+      Register
+    </button>
+  </div>
+</form>

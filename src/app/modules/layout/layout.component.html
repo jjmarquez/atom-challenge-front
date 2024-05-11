@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="flex justify-between">
+    <span>Atom Challenge</span>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      [matMenuTriggerFor]="menu"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div
+  class="bg-gradient-to-b from-purple-700 via-pink-500 to-red-500 px-4 py-5 sm:px-6 md:px-8 lg:px-20 xl:px-32 h-screen"
+>
+  <router-outlet></router-outlet>
+</div>
