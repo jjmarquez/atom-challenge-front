@@ -60,7 +60,7 @@ export class DashboardComponent implements OnInit {
     this.openDialog(
       task,
       'Complete Task',
-      `Are you sure you want to complete this task? Title: ${task.title}`
+      `Are you sure you want to complete this task? <br> Title: ${task.title}`
     );
   }
 
@@ -87,7 +87,7 @@ export class DashboardComponent implements OnInit {
 
   openDialog(task: Task, title: string, description: string): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      width: '250px',
+      width: '400px',
       enterAnimationDuration: '0ms',
       exitAnimationDuration: '0ms',
       data: {
@@ -119,13 +119,13 @@ export class DashboardComponent implements OnInit {
 
   openDeleteDialog(task: Task): void {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      width: '250px',
+      width: '400px',
       enterAnimationDuration: '0ms',
       exitAnimationDuration: '0ms',
       data: {
         task,
         title: 'Delete Task',
-        description: `Are you sure you want to delete this task - ${task.title}?`,
+        description: `Are you sure you want to delete <br> this task ${task.title}?`,
       },
     });
 

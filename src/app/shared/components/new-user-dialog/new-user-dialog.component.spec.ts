@@ -18,7 +18,7 @@ describe('NewUserDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, NoopAnimationsModule], // Import the dummy module here
+      imports: [ReactiveFormsModule, NoopAnimationsModule],
       providers: [
         NewUserDialogComponent,
         { provide: MatDialogRef, useValue: mockDialogRef },

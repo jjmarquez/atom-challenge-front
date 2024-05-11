@@ -21,7 +21,7 @@ describe('AuthService', () => {
   });
 
   afterEach(() => {
-    httpMock.verify(); // Ensure that there are no outstanding requests
+    httpMock.verify();
   });
 
   it('should make a GET request to the correct URL when login is called', () => {

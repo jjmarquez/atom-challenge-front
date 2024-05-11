@@ -44,10 +44,7 @@ describe('AuthComponent', () => {
         MatProgressSpinnerModule,
       ],
       declarations: [AuthComponent],
-      providers: [
-        AuthService,
-        { provide: MatDialog, useValue: dialogMock }, // Override MatDialog here
-      ],
+      providers: [AuthService, { provide: MatDialog, useValue: dialogMock }],
     }).compileComponents();
   });
 

@@ -22,8 +22,8 @@ describe('DashboardComponent', () => {
     isCompleted: false,
   };
 
-  let dialogRefSpyObj = jasmine.createSpyObj({ afterClosed: of({}) }); // create spy object for MatDialogRef
-  let matDialogSpy = jasmine.createSpyObj('MatDialog', ['open']); // create spy object for MatDialog
+  let dialogRefSpyObj = jasmine.createSpyObj({ afterClosed: of({}) });
+  let matDialogSpy = jasmine.createSpyObj('MatDialog', ['open']);
 
   beforeEach(async () => {
     const tasksServiceMock = jasmine.createSpyObj('TasksService', [
@@ -79,7 +79,7 @@ describe('DashboardComponent', () => {
     expect(dialogSpy).toHaveBeenCalledWith(
       task,
       'Complete Task',
-      `Are you sure you want to complete this task? Title: ${task.title}`
+      `Are you sure you want to complete this task? <br> Title: ${task.title}`
     );
   });
 
@@ -132,13 +132,13 @@ describe('DashboardComponent', () => {
     component.openDeleteDialog(task);
 
     expect(matDialogSpy.open).toHaveBeenCalledWith(ConfirmDialogComponent, {
-      width: '250px',
+      width: '400px',
       enterAnimationDuration: '0ms',
       exitAnimationDuration: '0ms',
       data: {
         task,
         title: 'Delete Task',
-        description: `Are you sure you want to delete this task - ${task.title}?`,
+        description: `Are you sure you want to delete <br> this task ${task.title}?`,
       },
     });
     expect(callDeleteTaskSpy).toHaveBeenCalledWith(task.id);
@@ -163,13 +163,13 @@ describe('DashboardComponent', () => {
     component.openDeleteDialog(task);
 
     expect(matDialogSpy.open).toHaveBeenCalledWith(ConfirmDialogComponent, {
-      width: '250px',
+      width: '400px',
       enterAnimationDuration: '0ms',
       exitAnimationDuration: '0ms',
       data: {
         task,
         title: 'Delete Task',
-        description: `Are you sure you want to delete this task - ${task.title}?`,
+        description: `Are you sure you want to delete <br> this task ${task.title}?`,
       },
     });
     expect(callDeleteTaskSpy).toHaveBeenCalledWith(task.id);
@@ -228,7 +228,7 @@ describe('DashboardComponent', () => {
     component.openDialog(task, title, description);
 
     expect(matDialogSpy.open).toHaveBeenCalledWith(ConfirmDialogComponent, {
-      width: '250px',
+      width: '400px',
       enterAnimationDuration: '0ms',
       exitAnimationDuration: '0ms',
       data: {

@@ -9,6 +9,7 @@ import {
 } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { Task } from '../../../modules/dashboard/models/task';
+import { PipesModule } from '../../../pipes/pipes.module';
 export interface DialogData {
   task: Task;
   title: string;
@@ -23,6 +24,7 @@ export interface DialogData {
     MatDialogClose,
     MatDialogTitle,
     MatDialogContent,
+    PipesModule,
   ],
   templateUrl: './confirm-dialog.component.html',
   styleUrl: './confirm-dialog.component.scss',
