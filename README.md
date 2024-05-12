@@ -1,19 +1,33 @@
-# AtomChallengeFront
+# atom-challenge-front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+This project is an Angular application that serves as the front-end for the Atom Challenge.
 
-## Development server
+## Packages
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Angular Material: I use it to build clean, functional, and attractive user interfaces.
 
-## Build
+ngx-toastr: This is a library for displaying toast notifications.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Running the project
 
-## Running unit tests
+To run this project, you need to have Node.js and Angular CLI installed on your machine. Then, you can clone the repository and install the dependencies:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+git clone https://github.com/your_username_/atom-challenge-front.git
+cd atom-challenge-front
+npm install
 
-## Further help
+- `To start` the development server, run:
 
-To get more help contact jjmarquez001@gmail.com
+- - `npm start`
+
+The application will be available at http://localhost:4200.
+
+- `To build` the project, run:
+
+- - `npm run build`
+
+The built files will be output to the dist/ directory.
+
+- `To run the unit tests`, run:
+
+- - `npm test`
