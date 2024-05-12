@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
 })
-export class AuthComponent {
+export class AuthComponent implements OnInit {
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
   });
@@ -25,6 +25,10 @@ export class AuthComponent {
     private _snackBar: MatSnackBar
   ) {}
 
+  ngOnInit(): void {
+    localStorage.removeItem('email');
+  }
+
   onSubmit(): void {
     const email = this.loginForm.value.email;
     if (this.loginForm.valid && email) {
@@ -33,7 +37,8 @@ export class AuthComponent {
         .login(email)
         .then((response) => {
           this.isLoading = false;
-          this.router.navigate(['/client/dashboard']);
+          localStorage.setItem('email', email);
+          this.router.navigate(['/dashboard']);
         })
         .catch((error) => {
           this.isLoading = false;
@@ -57,7 +62,8 @@ export class AuthComponent {
         this._snackBar.open('User registered successfully', 'Close', {
           duration: 3000,
         });
-        this.router.navigate(['/client/dashboard']);
+        localStorage.setItem('email', email);
+        this.router.navigate(['/dashboard']);
       })
       .catch((error) => {
         this.isLoading = false;

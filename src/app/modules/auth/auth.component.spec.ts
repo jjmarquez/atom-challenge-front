@@ -74,7 +74,7 @@ describe('AuthComponent', () => {
     component.loginForm.setValue({ email: 'test@example.com' });
     await component.onSubmit();
     expect(authService.login).toHaveBeenCalledWith('test@example.com');
-    expect(router.navigate).toHaveBeenCalledWith(['/client/dashboard']);
+    expect(router.navigate).toHaveBeenCalledWith(['/dashboard']);
   });
 
   it('should call AuthService.registerUser when registerUser is called', async () => {
@@ -88,7 +88,7 @@ describe('AuthComponent', () => {
       'Close',
       { duration: 3000 }
     );
-    expect(router.navigate).toHaveBeenCalledWith(['/client/dashboard']);
+    expect(router.navigate).toHaveBeenCalledWith(['/dashboard']);
   });
 
   it('should open NewUserDialogComponent and call registerUser when dialog is closed with result', () => {
