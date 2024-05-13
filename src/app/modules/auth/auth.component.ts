@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { NewUserDialogComponent } from '../../shared/components/new-user-dialog/new-user-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthService } from '../../shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-auth',

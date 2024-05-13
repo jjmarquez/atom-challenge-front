@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DashboardComponent } from './dashboard.component';
-import { TasksService } from '../../services/tasks/tasks.service';
 import { MatDialog } from '@angular/material/dialog';
 import { of } from 'rxjs';
 import { Task } from './models/task';
 import { TaskDialogComponent } from '../../shared/components/task-dialog/task-dialog.component';
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
+import { TasksService } from '../../shared/services/tasks/tasks.service';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;

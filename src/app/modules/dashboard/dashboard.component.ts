@@ -3,7 +3,6 @@ import { Task } from './models/task';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { TasksService } from '../../services/tasks/tasks.service';
 import { PipesModule } from '../../pipes/pipes.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,6 +10,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
 import { TaskDialogComponent } from '../../shared/components/task-dialog/task-dialog.component';
+import { TasksService } from '../../shared/services/tasks/tasks.service';
 
 @Component({
   selector: 'app-dashboard',
